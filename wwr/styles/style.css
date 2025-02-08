@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 div {
     max-width: 1600px;
 }
@@ -5,11 +7,13 @@ div {
     margin: 0 auto;
 }
 nav a {
+    text-decoration: none;
     text-align: center;
     color: white;
-    text-decoration: none;
+    padding: 35px;
 }
 #hero-msg h1 {
+    font-family: "Merienda", cursive; /* Ensure correct font-family name */
     text-align: center;
 }
 #hero-msg h4 {
@@ -21,62 +25,78 @@ nav a {
 main section {
     text-align: center;
 }
+main section img {
+    box-sizing: border-box;
+}
 #background {
     height: 725px;
 }
 body {
-    background-color: #eaf3f2; 
+    font-family: "Source Sans 3", Helvetica, sans-serif; /* Ensure correct font-family name */
+    font-size: 2em;
+    background-color: #eaf3f2;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    margin: 0;
 }
 header {
-    background-color:#044a3e;
+    background-color: #044a3e;
 }
 nav a:hover {
     background-color: black;
     color: #d9c2a3;
-} 
-.book {
-    text-align: center;
-    background-color: #117361;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
 }
-.join {
+.book, .join {
     text-align: center;
     background-color: #117361;
     color: white;
     text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
 }
-.book:hover {
-    background-color: #044a3e;
-    color: white;
+.card-img {
+    border: 10px solid #d9c2a3;
 }
-.join:hover {
+.book:hover, .join:hover {
     background-color: #044a3e;
     color: white;
 }
 .msg h2 {
     color: #044a3e;
+    padding: 35px;
 }
 .msg p {
     color: #044a3e;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    padding-bottom: 15px;
 }
 footer {
+    font-size: medium;
     background-color: #044a3e;
     color: white;
+    padding: 25px 50px;
 }
 footer a {
     text-align: center;
-    color:  white;
+    color: white;
     text-decoration: none;
+    padding-top: 15px;
+    margin-top: 200px;
 }
 footer a:hover {
-    color:  white;
+    color: white;
 }
 .logo {
     width: 80px;
 }
 .icon {
     width: 80px;
+    padding-top: 10px;
 }
 #hero-img {
     width: 100%;
@@ -86,4 +106,7 @@ footer p {
 }
 footer p a:hover {
     text-decoration: underline;
+}
+.river-card, .camping-card, .rafting-card {
+   margin: 200px 0;
 }
