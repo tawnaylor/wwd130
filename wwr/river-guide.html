@@ -11,20 +11,26 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            max-width: 100%;
+            height: auto;
         }
         .image-container {
             margin-bottom: 30px; /* Add spacing between images */
             text-align: center; /* Center the h2 elements */
             margin-top: 30px; /* Add space between each container */
+            padding: 0 15px; /* Add padding for smaller screens */
         }
         .shadow-box {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 10px;
             background-color: #fff;
             display: inline-block;
+            max-width: 100%;
         }
         #hero {
             background-color: rgba(255, 255, 255, 0.1); /* Match header background */
+            text-align: center;
+            padding: 0 15px; /* Add padding for smaller screens */
         }
         .fade-in {
             opacity: 0;
@@ -32,6 +38,20 @@
         }
         .fade-in.visible {
             opacity: 1;
+        }
+        #hero-img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
