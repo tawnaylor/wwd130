@@ -15,12 +15,23 @@
         .image-container {
             margin-bottom: 30px; /* Add spacing between images */
             text-align: center; /* Center the h2 elements */
+            margin-top: 30px; /* Add space between each container */
         }
         .shadow-box {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 10px;
             background-color: #fff;
             display: inline-block;
+        }
+        #hero {
+            background-color: rgba(255, 255, 255, 0.1); /* Match header background */
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
         }
     </style>
 </head>
@@ -32,7 +43,7 @@
         </a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="#">The River</a>
+            <a href="#">River Guides</a>
             <a href="site-plan-rafting.html">Site Plan</a>
             <a href="contactus.html">Contact Us</a>
         </nav>
@@ -51,7 +62,7 @@
                 <div class="shadow-box">
                     <img class="center-image" src="images/idaho 2.jpg" alt="Image 1">
                 </div>
-                <p>Nestled deep in the Frank Church Wilderness of No Return winds the Salmon river. The Salmon was given the nickname long ago as the River of No Return by the people living near it because of the number of folks that came to visit and fell so in love with the rugged beauty of the river that they never left.
+                <p class="fade-in">Nestled deep in the Frank Church Wilderness of No Return winds the Salmon river. The Salmon was given the nickname long ago as the River of No Return by the people living near it because of the number of folks that came to visit and fell so in love with the rugged beauty of the river that they never left.
 
                     Herds of elk and deer graze on the hillsides around the river and bear and bighorn sheep are also commonly sighted. The river corridor is also lined with awe inspiring ponderosa pine which tower over the sandy beaches in the campsites and provide shelter from sun or rain when needed.
                     
@@ -63,7 +74,7 @@
                 <div class="shadow-box">
                     <img class="center-image" src="images/desolation and gray canyon utah.jpg" alt="Image 2">
                 </div>
-                <p>Winding through canyons in central Utah, in some of the most desolate land anywhere, the Green river flows towards the mighty Colorado river and the sea. High grey stone cliffs, beautiful desert scenery, and great rapids have made this run famous. This 84-mile trip runs from from Sand Wash to Swaseys Rapid (just outside Green River Utah) and boasts outstanding scenery, interesting geologic formations, evidence of prehistoric and historic human activity, and great whitewater opportunities.
+                <p class="fade-in">Winding through canyons in central Utah, in some of the most desolate land anywhere, the Green river flows towards the mighty Colorado river and the sea. High grey stone cliffs, beautiful desert scenery, and great rapids have made this run famous. This 84-mile trip runs from from Sand Wash to Swaseys Rapid (just outside Green River Utah) and boasts outstanding scenery, interesting geologic formations, evidence of prehistoric and historic human activity, and great whitewater opportunities.
 
                     Desolation is rated a Class II/III and is usually done in 6 days
                     
@@ -75,7 +86,7 @@
                 <div class="shadow-box">
                     <img class="center-image" src="images/grand canyon small.jpg" alt="Image 3">
                 </div>
-                <p>This is the grand daddy of all canyons and the grand daddy of all river trips. You will never forget your visit to the Grand Canyon.
+                <p class="fade-in">This is the grand daddy of all canyons and the grand daddy of all river trips. You will never forget your visit to the Grand Canyon.
 
                     Grand Canyon river rafting combines world-class whitewater with breathtaking scenery to make one truly unforgettable river experience. The canyon is filled not only with exhilarating whitewater rapids, but with side canyons and ancient indian ruins accessible only by river.
                     
@@ -99,6 +110,24 @@
                 </div>
             </footer>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const fadeIns = document.querySelectorAll('.fade-in');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        } else {
+                            entry.target.classList.remove('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                fadeIns.forEach(fadeIn => {
+                    observer.observe(fadeIn);
+                });
+            });
+        </script>
     </body>
 </html>
 
