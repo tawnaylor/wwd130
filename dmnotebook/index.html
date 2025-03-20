@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Master's Notebook</title>
+    <link rel="stylesheet" href="styles/site-plan.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background_homepage.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'YourFontFamily', sans-serif; /* Replace 'YourFontFamily' with the font defined in site-plan.css */
+        }
+        header {
+            background-color: #593E2E; /* Updated header background color */
+            color: white;
+            padding: 10px 0;
+            width: 100%; /* Ensure the header spans the full width */
+            position: fixed; /* Keep the header fixed at the top */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            background-color: #261610; /* Updated button background color */
+            padding: 8px 15px; /* Add padding for button-like appearance */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+        }
+        header a:hover {
+            background-color: #777; /* Change background on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+        }
+        main {
+            margin-top: 60px; /* Prevent overlap with fixed header */
+            margin-bottom: 120px; /* Increase gap above the footer for more space */
+        }
+        footer {
+            background-color: #593E2E; /* Match header background color */
+            color: white;
+            padding: 3px 0; /* Further reduce padding to make the footer smaller */
+            width: 100%; /* Match header width */
+            position: fixed; /* Make footer fixed like the header */
+            bottom: 0;
+            left: 0;
+            z-index: 1000; /* Ensure it stays above other content */
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .card {
+            width: 400px; /* Updated to double the original size */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .logo {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .logo.flip {
+            transform: rotateY(360deg);
+        }
+    </style>
+    <script>
+        function flipLogo() {
+            const logo = document.querySelector('.logo');
+            logo.classList.add('flip');
+            setTimeout(() => logo.classList.remove('flip'), 600); // Remove the class after the animation
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div style="text-align: center; font-size: 18px;">
+            <a href="#home">Home</a> • 
+            <a href="#about">World Building</a> • 
+            <a href="#resources">Character Profiles</a> • 
+            <a href="#contact">About Us</a> • 
+            <a href="site-plan.html">Site Plan</a>
+        </div>
+    </header>
+    <main>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="DM Notebook Logo" class="logo" style="width: 300px; height: auto;" onclick="flipLogo()">
+        </div>
+        <p style="text-align: center; color: white; font-weight: bold;">
+            This Dungeons & Dragons website will serve as a central hub for both players and Dungeon Masters (DMs), providing a shared space for immersion, progress tracking, and collaboration. It will integrate a variety of features designed to enhance the overall gaming experience, such as interactive maps, character profiles, world-building elements, and collaborative tools. The website aims to create a seamless environment where players can easily engage with the game world and each other, while DMs have the necessary resources to guide their campaigns effectively. Whether it’s exploring the history of the land, developing their characters, or collaborating with their fellow players, the website will be a vital tool for enhancing their roleplaying adventures.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: 100px;"> 
+            <img src="images/taubee_fantasy_painting_of_a_purple_and_black_flag_on_a_hill_on_0d4666ce-2c4b-4358-a452-d3268161afd3.png" alt="Fantasy Flag" class="card">
+            <img src="images/castle_image.png" alt="Castle" class="card">
+        </div>
+        <!-- Content goes here -->
+    </main>
+    <footer>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+            <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="DM Notebook Logo" style="width: 100px; height: auto;">
+            <div style="text-align: center; font-size: 16px; flex-grow: 1;">
+                <a href="#home" style="margin: 0 10px;">Home</a> • 
+                <a href="#about" style="margin: 0 10px;">World Building</a> • 
+                <a href="#resources" style="margin: 0 10px;">Character Profiles</a> • 
+                <a href="#contact" style="margin: 0 10px;">About Us</a> • 
+                <a href="site-plan.html" style="margin: 0 10px;">Site Plan</a>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="images/facebook_icon.png" alt="Facebook Icon" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="images/twitter_icon.png" alt="Twitter Icon" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="images/instagram_icon.png" alt="Instagram Icon" style="width: 30px; height: 30px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
