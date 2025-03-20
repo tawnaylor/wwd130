@@ -12,6 +12,9 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             font-family: 'YourFontFamily', sans-serif; /* Replace 'YourFontFamily' with the font defined in site-plan.css */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         header {
             background-color: #593E2E; /* Updated header background color */
@@ -36,9 +39,16 @@
             background-color: #777; /* Change background on hover */
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
         }
+        header div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Add spacing between links */
+        }
         main {
             margin-top: 60px; /* Prevent overlap with fixed header */
             margin-bottom: 120px; /* Increase gap above the footer for more space */
+            padding: 20px; /* Add padding for better spacing on smaller screens */
         }
         footer {
             background-color: #593E2E; /* Match header background color */
@@ -55,8 +65,25 @@
             color: white;
             text-decoration: none;
         }
+        footer div {
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            text-align: center; /* Center-align content */
+        }
+        footer img {
+            margin: 0 auto; /* Center logo in footer */
+        }
+        footer div a {
+            margin: 5px; /* Add spacing between footer links */
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Add spacing between cards */
+        }
         .card {
-            width: 400px; /* Updated to double the original size */
+            width: 90%; /* Default to 90% width for smaller screens */
+            max-width: 400px; /* Limit maximum width */
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -72,6 +99,26 @@
         }
         .logo.flip {
             transform: rotateY(360deg);
+        }
+        @media (min-width: 768px) {
+            header div {
+                font-size: 18px; /* Larger font size for tablets and above */
+            }
+            .card-container {
+                gap: 20px; /* Increase spacing between cards */
+            }
+            .card {
+                width: 45%; /* Use 45% width for medium screens */
+            }
+        }
+        @media (min-width: 1024px) {
+            .card {
+                width: 30%; /* Use 30% width for larger screens */
+            }
+            footer div {
+                flex-direction: row; /* Arrange footer content in a row */
+                justify-content: space-between; /* Space out footer content */
+            }
         }
     </style>
     <script>
@@ -99,11 +146,10 @@
         <p style="text-align: center; color: white; font-weight: bold;">
             This Dungeons & Dragons website will serve as a central hub for both players and Dungeon Masters (DMs), providing a shared space for immersion, progress tracking, and collaboration. It will integrate a variety of features designed to enhance the overall gaming experience, such as interactive maps, character profiles, world-building elements, and collaborative tools. The website aims to create a seamless environment where players can easily engage with the game world and each other, while DMs have the necessary resources to guide their campaigns effectively. Whether it’s exploring the history of the land, developing their characters, or collaborating with their fellow players, the website will be a vital tool for enhancing their roleplaying adventures.
         </p>
-        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: 100px;"> 
+        <div class="card-container">
             <img src="images/taubee_fantasy_painting_of_a_purple_and_black_flag_on_a_hill_on_0d4666ce-2c4b-4358-a452-d3268161afd3.png" alt="Fantasy Flag" class="card">
             <img src="images/castle_image.png" alt="Castle" class="card">
         </div>
-        <!-- Content goes here -->
     </main>
     <footer>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
