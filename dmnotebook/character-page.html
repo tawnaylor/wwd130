@@ -83,9 +83,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center; /* Center cards vertically */
             gap: 10px; /* Add spacing between cards */
         }
         .card {
+            margin: 0 auto; /* Center each card horizontally */
             width: 90%; /* Default to 90% width for smaller screens */
             max-width: 400px; /* Limit maximum width */
             height: auto;
@@ -96,6 +98,11 @@
         .card:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .card img {
+            width: 100%; /* Ensure the image adjusts to the card's width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Keep the rounded corners */
         }
         .logo {
             transition: transform 0.6s;
@@ -137,10 +144,10 @@
     <header>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
             <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="Small Logo" style="width: 200px; height: auto; position: absolute; left: 10px; top: 10px;">
-            <a href="#home">Home</a> • 
+            <a href="index.html">Home</a> • 
             <a href="world-building.html">World Building</a> • 
-            <a href="#resources">Character Profiles</a> • 
-            <a href="#contact">About Us</a> • 
+            <a href="character-page.html">Character Profiles</a> • 
+            <a href="about-us.html">About Us</a> • 
             <a href="site-plan.html">Site Plan</a>
         </div>
     </header>
@@ -173,10 +180,10 @@
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
             <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="DM Notebook Logo" style="width: 100px; height: auto;">
             <div style="text-align: center; font-size: 16px; flex-grow: 1;">
-                <a href="#home" style="margin: 0 10px;">Home</a> • 
-                <a href="#about" style="margin: 0 10px;">World Building</a> • 
-                <a href="#resources" style="margin: 0 10px;">Character Profiles</a> • 
-                <a href="#contact" style="margin: 0 10px;">About Us</a> • 
+                <a href="index.html" style="margin: 0 10px;">Home</a> • 
+                <a href="world-building.html" style="margin: 0 10px;">World Building</a> • 
+                <a href="character-page.html" style="margin: 0 10px;">Character Profiles</a> • 
+                <a href="about-us.html" style="margin: 0 10px;">About Us</a> • 
                 <a href="site-plan.html" style="margin: 0 10px;">Site Plan</a>
             </div>
             <div style="display: flex; gap: 10px;">
