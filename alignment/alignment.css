@@ -1,4 +1,6 @@
 section {
     width: 50%;
     border: 1px solid;
-  }  
+  }  div p {
+    background-color: yellow;
+  }
