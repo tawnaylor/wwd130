@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
         header {
-            background-color: #593E2E; /* Updated header background color */
+            background-color: rgba(89, 62, 46, 0.5); /* 50% transparent header background */
             color: white;
             padding: 10px 0;
             width: 100%; /* Ensure the header spans the full width */
@@ -47,11 +47,11 @@
         }
         main {
             margin-top: 60px; /* Prevent overlap with fixed header */
-            margin-bottom: 120px; /* Increase gap above the footer for more space */
+            margin-bottom: 200px; /* Increase gap above the footer for more space */
             padding: 20px; /* Add padding for better spacing on smaller screens */
         }
         footer {
-            background-color: #593E2E; /* Match header background color */
+            background-color: rgba(89, 62, 46, 0.5); /* 50% transparent footer background */
             color: white;
             padding: 3px 0; /* Further reduce padding to make the footer smaller */
             width: 100%; /* Match header width */
@@ -120,6 +120,17 @@
                 justify-content: space-between; /* Space out footer content */
             }
         }
+        .fade-paragraphs {
+            position: relative;
+            height: auto; /* Adjust height to fit all the paragraphs */
+            overflow: visible; /* Allow all text to be visible */
+        }
+        .fade-paragraphs p {
+            position: relative; /* Change to relative for proper stacking */
+            opacity: 1; /* Ensure all text is visible */
+            color: white; /* Make the text color white */
+            transition: none; /* Remove fade effect */
+        }
     </style>
     <script>
         function flipLogo() {
@@ -127,6 +138,20 @@
             logo.classList.add('flip');
             setTimeout(() => logo.classList.remove('flip'), 600); // Remove the class after the animation
         }
+        document.addEventListener("DOMContentLoaded", () => {
+            const paragraphs = document.querySelectorAll(".fade-paragraphs p");
+            let currentIndex = 0;
+
+            function showNextParagraph() {
+                paragraphs.forEach((p, index) => {
+                    p.style.display = index === currentIndex ? "block" : "none"; // Show only the current paragraph
+                });
+                currentIndex = (currentIndex + 1) % paragraphs.length;
+            }
+
+            showNextParagraph(); // Show the first paragraph initially
+            setInterval(showNextParagraph, 20000); // 20-second intervals
+        });
     </script>
 </head>
 <body>
@@ -149,6 +174,13 @@
         <div class="card-container">
             <img src="images/taubee_fantasy_painting_of_a_purple_and_black_flag_on_a_hill_on_0d4666ce-2c4b-4358-a452-d3268161afd3.png" alt="Fantasy Flag" class="card">
             <img src="images/castle_image.png" alt="Castle" class="card">
+        </div>
+        <h2 style="text-align: center; color: white; margin-top: 80px;">DM TIP OF THE DAY</h2>
+        <div class="fade-paragraphs">
+            <p>Embrace Roleplaying and Character Development: One of the most enjoyable aspects of Dungeons & Dragons is immersing yourself in your character’s personality and story. Think about your character’s motivations, fears, and quirks, and let those influence your decisions in-game. Roleplaying doesn’t just enhance the fun for you, but it also helps make the game more engaging for your fellow players and the DM. Don't be afraid to take risks in character actions — it can lead to memorable moments and great storytelling.</p>
+            <p>Communication with Your DM and Party: D&D is a collaborative experience, so effective communication is key. Discuss your character’s goals and actions with your Dungeon Master (DM) and fellow players, especially if you're planning something outside the ordinary or involving your backstory. Whether you’re about to make an important decision, need to split up the party, or want to clarify rules, talking things out ensures smoother gameplay and minimizes misunderstandings.</p>
+            <p>Use Your Environment and Abilities Creatively: When you encounter combat or puzzles, don't just rely on the basic spells and attacks. Think about how the environment can be used to your advantage — can you topple a chandelier, use a nearby river, or cause distractions? Additionally, be creative with your character's abilities; many spells and skills have versatile uses beyond their standard functions. Stretching your imagination in these ways can surprise your DM and add exciting layers to encounters.</p>
+            <p>Learn the Rules, But Don't Obsess Over Them: Understanding the rules of D&D can definitely help the flow of the game, but don’t get bogged down by minor details or fear making a mistake. The game is meant to be fun, so if you’re unsure about a rule or a decision, just make a choice and keep things moving. The DM is there to help guide the game, and the focus should always be on enjoying the adventure, not perfecting every rule.</p>
         </div>
     </main>
     <footer>
