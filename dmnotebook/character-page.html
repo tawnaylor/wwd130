@@ -92,6 +92,7 @@
             max-width: 400px; /* Limit maximum width */
             height: auto;
             border-radius: 10px;
+            background-color: #3E2723; /* Set background color to dark brown */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -131,6 +132,44 @@
                 justify-content: space-between; /* Space out footer content */
             }
         }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Faded background */
+            z-index: 2000; /* Above other content */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: rgb(7, 7, 7);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .modal-content p {
+            margin-top: 10px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: black;
+        }
     </style>
     <script>
         function flipLogo() {
@@ -138,6 +177,46 @@
             logo.classList.add('flip');
             setTimeout(() => logo.classList.remove('flip'), 600); // Remove the class after the animation
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <img src="" alt="Card Image">
+                    <p></p>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const modalContent = modal.querySelector('.modal-content');
+            const modalImage = modal.querySelector('img');
+            const modalText = modal.querySelector('p');
+            const modalClose = modal.querySelector('.modal-close');
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const img = card.querySelector('img');
+                    const text = card.querySelector('p');
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt;
+                    modalText.textContent = text.textContent;
+                    modal.style.display = 'flex';
+                });
+            });
+
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
     </script>
 </head>
 <body>
@@ -155,24 +234,24 @@
         <h1 style="text-align: center; font-size: 48px; margin-top: 20px; color: white;">Character Profiles</h1>
         <div class="card-container">
             <div class="card">
-                <img src="images/calvin.png" alt="Card 1 Image" style="width: 100%; border-radius: 10px;">
-                <p style="padding: 10px;">This is the description for the first card. It provides details about the image above.</p>
+                <img src="images/calvin.png" alt="Card 1 Image" style="display: block;">
+                <p style="display: none; color: black;">Calvin, an elven prince born of High Elf royalty, was once a devoted follower of the radiant Moon Goddess, raised in the elegance and light of the royal courts. But after a devastating betrayal tore through his family, leaving shadows where moonlight once dwelled, his faith was shattered. Drawn to the dark wisdom of the Matrine of Ravens, goddess of death and hidden fate, Calvin renounced his old path. Now clad in black armor and a cloak of raven feathers, he walks a darker road—one of secrets, omens, and quiet vengeance.</p>
             </div>
             <div class="card">
-                <img src="images/lumis.png" alt="Card 2 Image" style="width: 100%; border-radius: 10px;">
-                <p style="padding: 10px;">This is the description for the second card. It provides details about the image above.</p>
+                <img src="images/lumis.png" alt="Card 2 Image" style="display: block;">
+                <p style="display: none; color: black;">Lumin is a wandering mage of immense intellect and formidable power, yet he walks the world as a nameless, homeless soul. Clad in tattered robes and carrying only his staff and his purpose, he moves from town to town, never seeking glory or reward. Though many see only a vagabond, those who witness his magic know the truth—he is a silent guardian against the rising tide of darkness. With no ties to kings or kingdoms, Lumin fights only for the good of the land, driven by a quiet, unwavering resolve to see evil wiped from the world.</p>
             </div>
             <div class="card">
-                <img src="images/sarah.png" alt="Card 3 Image" style="width: 100%; border-radius: 10px;">
-                <p style="padding: 10px;">This is the description for the third card. It provides details about the image above.</p>
+                <img src="images/sarah.png" alt="Card 3 Image" style="display: block;">
+                <p style="display: none; color: black;">Nikki is a bright spark in every sense—an energetic, wildly creative artificer with a boundless imagination and a love for all things that buzz, spark, or click. Hailing from a bookish family of inventors and builders, she quickly outgrew the quiet life of blueprints and theory, diving headfirst into hands-on chaos. Specializing in automatons and arclight tech, her workshop is a whirlwind of gears, glowing coils, and half-finished ideas. Though her manic energy and hyper-focus can border on chaotic, her heart is always in the right place, and her inventions—no matter how unpredictable—are always made to help, protect, and inspire.</p>
             </div>
             <div class="card">
-                <img src="images/the_flame_prince.png" alt="Card 4 Image" style="width: 100%; border-radius: 10px;">
-                <p style="padding: 10px;">This is the description for the fourth card. It provides details about the image above.</p>
+                <img src="images/the_flame_prince.png" alt="Card 4 Image" style="display: block;">
+                <p style="display: none; color: black;">King Cinder WildFire rose to the throne through tragedy and flame. Once a headstrong young royal with a rebellious streak, his life was forever changed when his father was betrayed and slain by the tyrant known as the Brass King. With fire-like hair and skin the hue of smoldering embers, Cinder now rules with a commanding presence—an intense blend of power, grace, and burning vengeance. Though young, his resolve is unshakable, and his heart burns with a promise: to restore his nation’s glory, avenge his fallen bloodline, and bring the Brass King to justice, no matter the cost.</p>
             </div>
             <div class="card">
-                <img src="images/lilith.png" alt="Card 5 Image" style="width: 100%; border-radius: 10px;">
-                <p style="padding: 10px;">This is the description for the fifth card. It provides details about the image above.</p>
+                <img src="images/lilith.png" alt="Card 5 Image" style="display: block;">
+                <p style="display: none; color: black;">Elanor—known to most as Ella—is an extraordinarily beautiful young woman, haunting in both grace and presence. But beneath her flawless skin lies a chilling truth: she is among the living dead. Brought back by a grief-stricken lover who traded his soul and body to defy death, Ella walks the world cursed—forever cold, her heart never beating, her warmth forever lost. The voice of her lost love whispers constantly in her mind, a bittersweet echo of sacrifice and sorrow. Now a wandering soul, Ella drifts through the realms, searching for purpose, peace, or perhaps a way to finally silence the past that clings to her like a ghost.</p>
             </div>
         </div>
     </main>
