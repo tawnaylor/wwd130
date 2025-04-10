@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles/site-plan.css">
     <style>
         body {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/map 4.jpg'); /* Updated to relative path */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/map_4.jpg'); /* Ensure correct relative path */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            font-family: 'YourFontFamily', sans-serif; /* Replace 'YourFontFamily' with the font defined in site-plan.css */
+            font-family: 'Arial', sans-serif; /* Example font-family */
         }
         header {
             background-color: #593E2E; /* Updated header background color */
@@ -115,8 +115,9 @@
         function toggleImageOverlay(src) {
             const overlay = document.querySelector('.overlay');
             const overlayImage = overlay.querySelector('img');
-            if (overlay.style.display === 'flex') {
+            if (!src) { // Ensure proper handling of empty src
                 overlay.style.display = 'none';
+                overlayImage.src = '';
             } else {
                 overlayImage.src = src;
                 overlay.style.display = 'flex';
@@ -140,11 +141,11 @@
     <main>
         <h1 style="text-align: center; font-size: 48px; margin-top: 20px; color: white;">World Building and History</h1>
         <div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
-            <div class="card" onclick="toggleImageOverlay('./images/map 2.jpg')">
-                <img src="./images/map 2.jpg" alt="Interactive map showing a region of the game world" style="width: 100%; border-radius: 10px;" loading="lazy">
+            <div class="card" onclick="toggleImageOverlay('./images/map_2.jpg')">
+                <img src="./images/map_2.jpg" alt="Interactive map showing a region of the game world" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
-            <div class="card" onclick="toggleImageOverlay('./images/map 3.jpg')">
-                <img src="./images/map 3.jpg" alt="Interactive map showing another region of the game world" style="width: 100%; border-radius: 10px;" loading="lazy">
+            <div class="card" onclick="toggleImageOverlay('./images/map_3.jpg')">
+                <img src="./images/map_3.jpg" alt="Interactive map showing another region of the game world" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
         </div>
         <p style="margin-top: 20px; text-align: center; color: white; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -154,13 +155,13 @@
             <div class="card" onclick="toggleImageOverlay('./images/map_image_01.png')">
                 <img src="./images/map_image_01.png" alt="Detailed map of a specific area" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
-            <div class="card" onclick="toggleImageOverlay('./images/map 5.png')">
-                <img src="./images/map 5.png" alt="Another detailed map of a specific area" style="width: 100%; border-radius: 10px;" loading="lazy">
+            <div class="card" onclick="toggleImageOverlay('./images/map_5.png')">
+                <img src="./images/map_5.png" alt="Another detailed map of a specific area" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
         </div>
     </main>
     <div class="overlay" onclick="toggleImageOverlay('')">
-        <img src="" alt="Enlarged view of the selected map">
+        <img src="./images/placeholder.png" alt="Expanded view of the selected map">
     </div>
     <footer>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
