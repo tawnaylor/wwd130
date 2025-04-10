@@ -36,6 +36,13 @@
             background-color: #777; /* Change background on hover */
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
         }
+        header img {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
         main {
             margin-top: 60px; /* Prevent overlap with fixed header */
             margin-bottom: 120px; /* Increase gap above the footer for more space */
@@ -51,9 +58,17 @@
             z-index: 1000; /* Ensure it stays above other content */
             box-sizing: border-box; /* Include padding in the width calculation */
         }
+        footer img {
+            width: 100px;
+            height: auto;
+        }
         footer a {
             color: white;
             text-decoration: none;
+        }
+        .social-icons img {
+            width: 24px; /* Ensure consistent size for social icons */
+            height: 24px;
         }
         .card {
             width: 400px; /* Updated to double the original size */
@@ -112,24 +127,24 @@
 <body>
     <header>
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="Dungeon Master's Notebook Logo" style="width: 200px; height: auto; position: absolute; left: 10px; top: 10px;">
-            <div style="text-align: center; font-size: 18px;">
-                <a href="index.html">Home</a> • 
-                <a href="world-building.html">World Building</a> • 
-                <a href="character-page.html">Character Profiles</a> • 
-                <a href="#contact">About Us</a> • 
-                <a href="site-plan.html">Site Plan</a>
-            </div>
+            <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="Dungeon Master's Notebook Logo">
+            <nav style="text-align: center; font-size: 18px;">
+                <a href="index.html" aria-label="Home">Home</a> • 
+                <a href="world-building.html" aria-label="World Building">World Building</a> • 
+                <a href="character-page.html" aria-label="Character Profiles">Character Profiles</a> • 
+                <a href="#contact" aria-label="About Us">About Us</a> • 
+                <a href="site-plan.html" aria-label="Site Plan">Site Plan</a>
+            </nav>
         </div>
     </header>
     <main>
         <h1 style="text-align: center; font-size: 48px; margin-top: 20px; color: white;">World Building and History</h1>
         <div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
             <div class="card" onclick="toggleImageOverlay('images/map 2.jpg')">
-                <img src="images/map 2.jpg" alt="Map 2" style="width: 100%; border-radius: 10px;" loading="lazy">
+                <img src="images/map 2.jpg" alt="Interactive map showing a region of the game world" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
             <div class="card" onclick="toggleImageOverlay('images/map 3.jpg')">
-                <img src="images/map 3.jpg" alt="Map 3" style="width: 100%; border-radius: 10px;" loading="lazy">
+                <img src="images/map 3.jpg" alt="Interactive map showing another region of the game world" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
         </div>
         <p style="margin-top: 20px; text-align: center; color: white; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -137,34 +152,34 @@
         </p>
         <div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
             <div class="card" onclick="toggleImageOverlay('images/map_image_01.png')">
-                <img src="images/map_image_01.png" alt="Map Image 1" style="width: 100%; border-radius: 10px;" loading="lazy">
+                <img src="images/map_image_01.png" alt="Detailed map of a specific area" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
             <div class="card" onclick="toggleImageOverlay('images/map 5.png')">
-                <img src="images/map 5.png" alt="Map 5" style="width: 100%; border-radius: 10px;" loading="lazy">
+                <img src="images/map 5.png" alt="Another detailed map of a specific area" style="width: 100%; border-radius: 10px;" loading="lazy">
             </div>
         </div>
     </main>
     <div class="overlay" onclick="toggleImageOverlay('')">
-        <img src="" alt="Enlarged Image">
+        <img src="" alt="Enlarged view of the selected map">
     </div>
     <footer>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
-            <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="Dungeon Master's Notebook Logo" style="width: 100px; height: auto;">
-            <div style="text-align: center; font-size: 16px; flex-grow: 1;">
-                <a href="index.html" style="margin: 0 10px;">Home</a> • 
-                <a href="world-building.html" style="margin: 0 10px;">World Building</a> • 
-                <a href="character-page.html" style="margin: 0 10px;">Character Profiles</a> • 
-                <a href="#contact" style="margin: 0 10px;">About Us</a> • 
-                <a href="site-plan.html" style="margin: 0 10px;">Site Plan</a>
-            </div>
-            <div style="display: flex; gap: 10px;">
-                <a href="https://facebook.com" target="_blank">
+            <img src="images/background_removed_image_05iJt3sSREWTzwHRDNYg5w.png" alt="Dungeon Master's Notebook Logo">
+            <nav style="text-align: center; font-size: 16px; flex-grow: 1;">
+                <a href="index.html" style="margin: 0 10px;" aria-label="Home">Home</a> • 
+                <a href="world-building.html" style="margin: 0 10px;" aria-label="World Building">World Building</a> • 
+                <a href="character-page.html" style="margin: 0 10px;" aria-label="Character Profiles">Character Profiles</a> • 
+                <a href="#contact" style="margin: 0 10px;" aria-label="About Us">About Us</a> • 
+                <a href="site-plan.html" style="margin: 0 10px;" aria-label="Site Plan">Site Plan</a>
+            </nav>
+            <div class="social-icons" style="display: flex; gap: 10px;">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
                     <img src="./images/facebook.png" alt="Facebook Icon" loading="lazy">
                 </a>
-                <a href="https://twitter.com" target="_blank">
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
                     <img src="./images/twitter.png" alt="Twitter Icon" loading="lazy">
                 </a>
-                <a href="https://instagram.com" target="_blank">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
                     <img src="./images/instagram.png" alt="Instagram Icon" loading="lazy">
                 </a>
             </div>
